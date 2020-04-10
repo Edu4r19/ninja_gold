@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ninja Gold</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <img class="header" src="{{ url_for('static', filename='img/header.png') }}" alt="Ninja Gold Game logo">
+        <div>
+            <h3 class="score">Your Gold: {{gold}}</h3>
+        </div>
+        <form class="resetb" action="/reset" method="POST" class="reset">
+            <input class="btn btn-danger btn-lg" type="submit" name="submit" value="Reset Game"/>
+        </form>
+            <div class="jumbotron bets" id="farm">
+                <h1 class="display-4">Farm</h1>
+                <p class="lead">( earns 10-20 golds )</p>
+                <hr class="my-2">
+                <form action="/process_money" method="POST">
+                    <input type="hidden" name="action" value="farm" />
+                    <input class="btn btn-primary btn-lg" type="submit" name="submit" value="Find Gold!" />
+                </form>
+            </div>
+            <div class="jumbotron bets" id="cave">
+                <h1 class="display-4">Cave</h1>
+                <p class="lead">( earns 5-10 golds )</p>
+                <hr class="my-2">
+                <form action="/process_money" method="POST">
+                    <input type="hidden" name="action" value="cave" />
+                    <input class="btn btn-primary btn-lg" type="submit" name="submit" value="Find Gold!" />
+                </form>
+            </div>
+            <div class="jumbotron bets" id="house">
+                <h1 class="display-4">House</h1>
+                <p class="lead">( earns 2-5 golds )</p>
+                <hr class="my-2">
+                <form action="/process_money" method="POST">
+                    <input type="hidden" name="action" value="house" />
+                    <input class="btn btn-primary btn-lg" type="submit" name="submit" value="Find Gold!" />
+                </form>
+            </div>
+            <div class="jumbotron bets" id="casino">
+                <h1 class="display-4">Casino</h1>
+                <p class="lead" id="small">( earns/takes 0-50 golds )</p>
+                <hr class="my-2">
+                <form action="/process_money" method="POST">
+                    <input type="hidden" name="action" value="casino" />
+                    <input class="btn btn-primary btn-lg" type="submit" name="submit" value="Find Gold!" />
+                </form>
+            </div>
+        <hr class="my-4">
+        <div class="activities">
+            {% if activities %}
+            <h2 class="logheader">Activities</h2>
+            <ul>
+                {% for class, activity in activities %}
+                <li class={{class}}>{{activity}}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+    </div>
+    </body>
+</body>
+</html>

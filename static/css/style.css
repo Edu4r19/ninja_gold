@@ -1,0 +1,68 @@
+/* *{
+    border: 1px solid black;
+} */
+.container{
+    padding: 10px 10px;
+    border: 3px solid rgba(199, 199, 199, 0.288);
+    border-radius: 10px;
+}
+.header{
+    margin: 0 auto;
+    margin: 10px;
+    width: 50%;
+}
+.score{
+    margin: 10px;
+}
+.losec{
+    background-color: rgba(196, 48, 48, 0.726) !important;
+    border-radius: 10px !important;
+    display: block;
+}
+.resetb{
+    margin: 0px 10px;
+}
+.bets{
+    display: inline-block;
+    margin: 9px !important;
+    width: 23%;
+    vertical-align: top;
+    height: 260px;
+}
+#small{
+    font-size: 1.05em;
+}
+.btn-primary{
+    margin: 0 auto;
+}
+#farm{
+    background-color: rgb(212, 153, 106);
+}
+#cave{
+    background-color: rgb(107, 78, 144);
+}
+#house{
+    background-color: rgb(79, 159, 100);
+}
+#casino{
+    background-color: rgb(212, 212, 106);
+}
+.logheader{
+    margin: 0px 10px;
+}
+.activities{
+    margin: 10px;
+    overflow: auto;
+    border: 1px solid black;
+}
+.activities li {
+    list-style: none;
+}
+
+.earned {
+    color: rgb(0, 252, 0);
+}
+
+.lost {
+    color: red;
+}
